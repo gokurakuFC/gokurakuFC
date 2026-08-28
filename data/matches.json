@@ -1,6 +1,25 @@
 {
-  "updatedAt": null,
+  "updatedAt": "2026-08-28T10:51:10.002Z",
   "source": "https://virtualprogaming.com/league/Japan-Challenge-Cup/matches",
   "competition": "Japan Challenge Cup",
-  "matches": []
+  "matches": [
+    {
+      "competition": "Japan Challenge Cup",
+      "date": null,
+      "home": "DESAFIANTE CF",
+      "away": "GOKURAKU FC",
+      "scoreHome": null,
+      "scoreAway": null,
+      "source": "https://virtualprogaming.com/league/Japan-Challenge-Cup/matches"
+    },
+    {
+      "competition": "Japan Challenge Cup",
+      "date": null,
+      "home": "GOKURAKU FC",
+      "away": "THE HORSE FACE",
+      "scoreHome": null,
+      "scoreAway": null,
+      "source": "https://virtualprogaming.com/league/Japan-Challenge-Cup/matches"
+    }
+  ]
 }
