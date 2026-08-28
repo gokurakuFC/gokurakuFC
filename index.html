@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#14263a" />
+  <meta name="description" content="GOKURAKU FC 公式サイト。FC26 Pro Clubs / VPG JAPANで活動するオンラインフットボールクラブ。" />
+  <title>GOKURAKU FC | Official Site</title>
+  <style>
+    :root{
+      --navy:#14263a;
+      --navy2:#20364d;
+      --cream:#f4efe4;
+      --paper:#fbf8f1;
+      --gold:#b8914e;
+      --gold2:#d1b070;
+      --ink:#16283a;
+      --muted:#6e7680;
+      --line:rgba(20,38,58,.16);
+      --shadow:0 24px 70px rgba(13,29,45,.16);
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 80% 0%, rgba(209,176,112,.10), transparent 28rem),
+        var(--paper);
+      font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,system-ui,-apple-system,sans-serif;
+      line-height:1.7;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    button{font:inherit}
+    .wrap{width:min(1120px,calc(100% - 38px));margin:auto}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:.55rem;
+      font-size:.78rem;font-weight:800;letter-spacing:.16em;
+      color:var(--gold);text-transform:uppercase;
+    }
+    .dot{width:.5rem;height:.5rem;border-radius:50%;background:#e13939;box-shadow:0 0 0 6px rgba(225,57,57,.12)}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{line-height:1.12}
+    .section{padding:96px 0}
+    .section-title{font-size:clamp(2.2rem,5vw,4.5rem);letter-spacing:-.045em;margin:.35rem 0 1rem}
+    .section-lead{max-width:720px;color:var(--muted);font-size:1.03rem}
+
+    /* NAV */
+    .nav{
+      position:fixed;z-index:50;left:0;right:0;top:0;
+      padding:14px 0;
+      background:linear-gradient(to bottom,rgba(13,29,45,.88),rgba(13,29,45,.42),transparent);
+      backdrop-filter:blur(4px);
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;color:white;font-weight:900;letter-spacing:.08em}
+    .brand img{width:44px;height:44px;object-fit:cover;border-radius:50%;background:white;border:1px solid rgba(255,255,255,.35)}
+    .nav-links{display:flex;align-items:center;gap:28px;color:white;font-weight:700;font-size:.9rem}
+    .nav-links a{opacity:.82}
+    .nav-links a:hover{opacity:1}
+    .nav-cta{
+      padding:10px 16px;border:1px solid rgba(255,255,255,.4);
+      border-radius:999px;background:rgba(255,255,255,.08)
+    }
+
+    /* HERO */
+    .hero{
+      min-height:100svh;display:grid;place-items:center;position:relative;overflow:hidden;color:white;
+      background:
+        linear-gradient(rgba(10,26,42,.35),rgba(10,26,42,.88)),
+        radial-gradient(circle at 20% 28%,rgba(209,176,112,.28),transparent 24rem),
+        linear-gradient(135deg,#102235,#1d354a 52%,#101c2b);
+    }
+    .hero:after{
+      content:"";position:absolute;inset:auto 0 0;height:170px;
+      background:
+        radial-gradient(130% 115% at 50% 145%,rgba(244,239,228,1) 52%,transparent 53%);
+      pointer-events:none;
+    }
+    .steam{position:absolute;inset:0;overflow:hidden;opacity:.22;pointer-events:none}
+    .steam span{
+      position:absolute;bottom:-20vh;width:22vw;height:80vh;border-radius:50%;
+      filter:blur(42px);background:linear-gradient(to top,rgba(255,255,255,.02),rgba(255,255,255,.85),rgba(255,255,255,0));
+      animation:steam 10s ease-in-out infinite alternate;
+      transform:rotate(12deg);
+    }
+    .steam span:nth-child(1){left:6%;animation-delay:-2s}
+    .steam span:nth-child(2){left:37%;width:18vw;animation-duration:13s;animation-delay:-6s}
+    .steam span:nth-child(3){right:8%;width:24vw;animation-duration:11s;animation-delay:-3s}
+    @keyframes steam{
+      from{transform:translateY(10%) translateX(-2%) rotate(8deg) scale(.95);opacity:.35}
+      to{transform:translateY(-8%) translateX(6%) rotate(18deg) scale(1.12);opacity:.75}
+    }
+    .hero-inner{
+      position:relative;z-index:2;width:min(1180px,calc(100% - 38px));
+      display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:64px;padding:120px 0 150px;
+    }
+    .hero-copy h1{
+      font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+      font-size:clamp(4rem,10vw,8.2rem);
+      margin:.2rem 0 .55rem;letter-spacing:.02em;font-weight:700;
+    }
+    .hero-copy .jp{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(1.2rem,2.5vw,2rem);
+      letter-spacing:.24em;margin-bottom:1.35rem;color:#ead7ad;font-weight:700;
+    }
+    .hero-copy .sub{max-width:560px;color:rgba(255,255,255,.74);margin:1.25rem 0 2rem}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      padding:14px 20px;border-radius:999px;border:1px solid transparent;font-weight:900;transition:.2s transform,.2s background;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-gold{background:var(--gold2);color:#132438}
+    .btn-ghost{border-color:rgba(255,255,255,.36);color:white;background:rgba(255,255,255,.06)}
+    .logo-stage{
+      position:relative;display:grid;place-items:center;min-height:520px;
+    }
+    .logo-stage:before{
+      content:"";position:absolute;width:440px;height:440px;max-width:78vw;max-height:78vw;
+      border-radius:50%;border:1px solid rgba(209,176,112,.28);box-shadow:0 0 0 28px rgba(255,255,255,.025),0 0 0 58px rgba(255,255,255,.018);
+    }
+    .logo-card{
+      width:min(390px,76vw);border-radius:42px;overflow:hidden;background:#fff;
+      box-shadow:0 34px 85px rgba(0,0,0,.38);transform:rotate(1deg);
+      border:1px solid rgba(255,255,255,.5);
+    }
+
+    /* ABOUT */
+    .intro-strip{
+      margin-top:-18px;position:relative;z-index:3;
+      display:grid;grid-template-columns:repeat(3,1fr);border-radius:24px;overflow:hidden;
+      background:white;box-shadow:var(--shadow);border:1px solid var(--line);
+    }
+    .intro-strip div{padding:26px 30px;border-right:1px solid var(--line)}
+    .intro-strip div:last-child{border-right:0}
+    .intro-strip strong{display:block;font-size:1.3rem}
+    .intro-strip span{color:var(--muted);font-size:.9rem}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+    .card{
+      padding:30px 26px;border:1px solid var(--line);border-radius:var(--radius);
+      background:rgba(255,255,255,.68);min-height:250px;position:relative;overflow:hidden;
+      transition:.25s transform,.25s box-shadow,.25s border-color;
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:0 20px 45px rgba(18,38,57,.09);border-color:rgba(184,145,78,.42)}
+    .card .num{font-family:Georgia,serif;font-size:4.8rem;color:rgba(184,145,78,.13);position:absolute;right:16px;top:2px}
+    .card .icon{font-size:2rem;margin-bottom:34px}
+    .card h3{font-size:1.35rem;margin-bottom:8px}
+    .card p{color:var(--muted);font-size:.94rem;margin:0}
+    .quote{
+      margin-top:56px;padding:58px;border-radius:36px;color:white;position:relative;overflow:hidden;
+      background:linear-gradient(135deg,var(--navy),#2b455b);
+      box-shadow:var(--shadow);
+    }
+    .quote:after{content:"♨";position:absolute;right:4%;bottom:-28%;font-size:16rem;color:rgba(255,255,255,.045)}
+    .quote .big{font-family:Georgia,serif;font-size:clamp(2.3rem,5vw,4.8rem);line-height:1;margin-bottom:16px;letter-spacing:-.04em}
+    .quote p{margin:0;color:#ead7ad;font-weight:800;font-size:1.08rem}
+
+
+    /* MATCHES */
+    .matches-section{
+      position:relative;
+      background:
+        radial-gradient(circle at 10% 20%,rgba(184,145,78,.09),transparent 25rem),
+        #f5f0e6;
+      border-top:1px solid rgba(20,38,58,.08);
+      border-bottom:1px solid rgba(20,38,58,.08);
+    }
+    .matches-head{
+      display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px;
+    }
+    .matches-head .section-lead{margin-bottom:0}
+    .vpg-link{
+      white-space:nowrap;border:1px solid var(--line);background:white;
+      padding:11px 16px;border-radius:999px;font-size:.88rem;font-weight:800;
+    }
+    .match-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:22px;
+    }
+    .match-card{
+      background:white;border:1px solid var(--line);border-radius:30px;
+      padding:30px;box-shadow:0 18px 50px rgba(18,38,57,.08);
+      position:relative;overflow:hidden;
+    }
+    .match-card:after{
+      content:"♨";position:absolute;right:-18px;bottom:-55px;
+      font-size:9rem;color:rgba(184,145,78,.055);pointer-events:none;
+    }
+    .match-label{
+      display:flex;align-items:center;justify-content:space-between;gap:15px;
+      margin-bottom:21px;font-size:.75rem;font-weight:900;letter-spacing:.13em;
+      color:var(--gold);text-transform:uppercase;
+    }
+    .competition{
+      display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.08em;
+      color:var(--muted);margin-bottom:18px;
+    }
+    .match-teams{
+      display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:15px;
+      min-height:88px;
+    }
+    .match-team{
+      font-size:clamp(1.15rem,2.5vw,1.7rem);font-weight:900;line-height:1.2;
+    }
+    .match-team:last-child{text-align:right}
+    .match-score{
+      min-width:82px;text-align:center;font-family:Georgia,serif;
+      font-size:clamp(1.7rem,4vw,2.7rem);font-weight:700;color:var(--navy);
+    }
+    .match-vs{
+      min-width:82px;text-align:center;font-family:Georgia,serif;
+      font-size:1rem;font-weight:900;color:var(--gold);letter-spacing:.12em;
+    }
+    .match-meta{
+      display:flex;align-items:center;justify-content:space-between;gap:15px;
+      margin-top:23px;padding-top:19px;border-top:1px solid var(--line);
+      color:var(--muted);font-size:.88rem;
+    }
+    .status{
+      display:inline-flex;align-items:center;gap:7px;padding:7px 11px;
+      border-radius:999px;font-size:.76rem;font-weight:900;
+    }
+    .status.upcoming{background:rgba(20,38,58,.08);color:var(--navy)}
+    .status.pending{background:rgba(184,145,78,.14);color:#8b682f}
+    .status.finished{background:rgba(25,116,76,.10);color:#236d4f}
+    .match-empty{
+      grid-column:1/-1;border:1px dashed rgba(20,38,58,.22);border-radius:26px;
+      padding:38px;background:rgba(255,255,255,.55);text-align:center;
+    }
+    .match-empty strong{display:block;font-size:1.15rem;margin-bottom:7px}
+    .match-empty p{margin:0 auto 18px;max-width:650px;color:var(--muted);font-size:.92rem}
+
+    /* LIVE */
+    .live-section{background:#0f1d2c;color:white;position:relative;overflow:hidden}
+    .live-section:before{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(circle at 85% 20%,rgba(184,145,78,.16),transparent 28rem);
+      pointer-events:none
+    }
+    .live-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:34px;align-items:start}
+    .player-shell{
+      border-radius:30px;overflow:hidden;background:#07111b;border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 30px 90px rgba(0,0,0,.36);aspect-ratio:16/9;position:relative;
+    }
+    .player-shell iframe{width:100%;height:100%;border:0}
+    .offline{
+      height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+      padding:28px;background:
+        linear-gradient(rgba(7,17,27,.78),rgba(7,17,27,.96)),
+        radial-gradient(circle at center,rgba(209,176,112,.13),transparent 50%);
+    }
+    .offline .mark{font-size:4rem;margin-bottom:12px}
+    .offline h3{font-size:1.55rem;margin:0 0 8px}
+    .offline p{color:rgba(255,255,255,.58);max-width:460px}
+    .live-copy{padding:16px 0}
+    .live-copy h2{font-size:clamp(2.8rem,5vw,5.4rem);margin:.3rem 0 1rem}
+    .live-copy p{color:rgba(255,255,255,.62)}
+    .mini-note{
+      margin-top:22px;padding:17px 18px;border-left:3px solid var(--gold);
+      background:rgba(255,255,255,.04);border-radius:0 14px 14px 0;color:rgba(255,255,255,.7);font-size:.88rem;
+    }
+
+    /* JOIN */
+    .join-box{
+      display:grid;grid-template-columns:1fr auto;align-items:center;gap:30px;
+      background:linear-gradient(135deg,#f6efe1,#fbf8f1);
+      border:1px solid rgba(184,145,78,.28);border-radius:36px;padding:52px;
+      box-shadow:0 24px 70px rgba(18,38,57,.10);
+    }
+    .join-box h2{font-size:clamp(2.5rem,5vw,5rem);margin:.2rem 0 .7rem}
+    .join-box p{max-width:680px;color:var(--muted);margin-bottom:0}
+    .join-actions{display:flex;flex-direction:column;gap:10px;min-width:230px}
+    .btn-navy{background:var(--navy);color:white}
+    .btn-outline{border-color:var(--line);background:white}
+    .join-list{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+    .chip{border:1px solid var(--line);padding:8px 12px;border-radius:999px;background:white;font-size:.87rem;font-weight:700}
+
+    /* FOOTER */
+    footer{padding:46px 0;background:#0d1926;color:white}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:25px}
+    .footer-brand{display:flex;align-items:center;gap:13px;font-weight:900}
+    .footer-brand img{width:52px;height:52px;border-radius:50%;object-fit:cover;background:white}
+    .footer-links{display:flex;gap:22px;color:rgba(255,255,255,.65);font-size:.9rem}
+
+    @media (max-width:900px){
+      .nav-links a:not(.nav-cta){display:none}
+      .hero-inner{grid-template-columns:1fr;text-align:center;gap:18px;padding-top:125px}
+      .hero-copy .sub{margin-left:auto;margin-right:auto}
+      .hero-actions{justify-content:center}
+      .logo-stage{min-height:390px}
+      .logo-stage:before{width:320px;height:320px}
+      .logo-card{width:280px;border-radius:30px}
+      .intro-strip{grid-template-columns:1fr}
+      .intro-strip div{border-right:0;border-bottom:1px solid var(--line)}
+      .intro-strip div:last-child{border-bottom:0}
+      .cards{grid-template-columns:1fr 1fr}
+      .match-grid{grid-template-columns:1fr}
+      .matches-head{align-items:flex-start;flex-direction:column}
+      .live-grid{grid-template-columns:1fr}
+      .join-box{grid-template-columns:1fr}
+      .join-actions{min-width:0;flex-direction:row;flex-wrap:wrap}
+    }
+    @media (max-width:620px){
+      .wrap{width:min(100% - 26px,1120px)}
+      .section{padding:72px 0}
+      .brand span{display:none}
+      .hero-copy h1{font-size:clamp(3.2rem,17vw,5rem)}
+      .hero-copy .jp{letter-spacing:.18em}
+      .cards{grid-template-columns:1fr}
+      .quote{padding:38px 28px}
+      .join-box{padding:34px 24px}
+      .join-actions{flex-direction:column}
+      .footer-inner{align-items:flex-start;flex-direction:column}
+      .footer-links{flex-wrap:wrap}
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">
+        <img src="assets/gokuraku-fc-logo.png" alt="GOKURAKU FC logo">
+        <span>GOKURAKU FC</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">ABOUT</a>
+        <a href="#matches">MATCHES</a>
+        <a href="#live">LIVE</a>
+        <a href="#join" class="nav-cta">JOIN US</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="steam"><span></span><span></span><span></span></div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">ONLINE FOOTBALL CLUB · EST. 2026</span>
+        <h1 class="hero-jp-title">極楽FC</h1>
+        <div class="jp hero-en-title">GOKURAKU FC</div>
+        <p class="sub">勝負は熱く、雰囲気は極楽。FC26 Pro Clubsを中心に、VPG JAPANで活動するオンラインフットボールクラブ。</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#live">● LIVEを見る</a>
+          <a class="btn btn-ghost" href="#join">加入について相談する</a>
+        </div>
+      </div>
+      <div class="logo-stage">
+        <div class="logo-card">
+          <img src="assets/gokuraku-fc-logo.png" alt="極楽FC GOKURAKU FC crest">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap">
+      <div class="intro-strip">
+        <div><strong>FC26 Pro Clubs</strong><span>11人制クラブモードを中心に活動</span></div>
+        <div><strong>VPG JAPAN</strong><span>リーグ・カップ戦へ参戦</span></div>
+        <div><strong>楽しみながら真剣にサッカー議論</strong><span>考えて、話して、もっといいサッカーへ</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <span class="eyebrow">ABOUT GOKURAKU</span>
+        <h2 class="section-title">サッカーは本気。<br>雰囲気は極楽。</h2>
+        <p class="section-lead">極楽FCは、オンラインで集まったメンバーがチームとして戦うフットボールクラブ。勝つために考える。でも、遊び心は忘れない。そんなちょうどいい熱量で活動しています。日程調整や試合の出場機会の検討にも力を入れており、社会人にも優しいチームです。</p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="num">01</div><div class="icon">⚽</div>
+            <h3>PLAY</h3>
+            <p>FC26 Pro Clubsを中心に、連携と戦術を楽しみながら試合に挑みます。</p>
+          </article>
+          <article class="card">
+            <div class="num">02</div><div class="icon">🏆</div>
+            <h3>COMPETE</h3>
+            <p>VPG JAPANのリーグ・カップ戦へ参戦。本気の試合だからこその面白さを。</p>
+          </article>
+          <article class="card">
+            <div class="num">03</div><div class="icon">♨️</div>
+            <h3>ENJOY</h3>
+            <p>ミスしても次へ。勝負は熱くても、空気はやわらかく。極楽らしいチームづくり。</p>
+          </article>
+          <article class="card">
+            <div class="num">04</div><div class="icon">🎮</div>
+            <h3>COMMUNITY</h3>
+            <p>プレーだけでなく、配信や交流も含めてみんなでクラブを育てていきます。サッカーゲーム以外も、みんなで楽しく遊ぶことがたくさんあります。</p>
+          </article>
+        </div>
+
+        <div class="quote">
+          <div class="big">PLAY HARD.<br>RELAX HARDER.</div>
+          <p>熱くなったら、極楽へ。</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section matches-section" id="matches">
+      <div class="wrap">
+        <div class="matches-head">
+          <div>
+            <span class="eyebrow">MATCHES</span>
+            <h2 class="section-title">次の一戦と、<br>直近の結果。</h2>
+            <p class="section-lead">VPG公式の大会ページを定期確認し、GOKURAKU FCの試合情報を自動掲載。大会名も各試合の上部に表示し、試合日を過ぎても結果が未反映の場合は「結果反映待ち」と表示します。</p>
+          </div>
+          <a class="vpg-link" href="https://virtualprogaming.com/calendar" target="_blank" rel="noopener">VPG公式カレンダー ↗</a>
+        </div>
+
+        <div class="match-grid" id="matchGrid">
+          <!-- JavaScriptで試合カードを生成 -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section live-section" id="live">
+      <div class="wrap live-grid">
+        <div>
+          <div class="player-shell" id="playerShell">
+            <div class="offline" id="offlinePanel">
+              <div class="mark">♨️⚽</div>
+              <h3>GOKURAKU FC LIVE</h3>
+              <p>現在はYouTubeチャンネルへの導線を表示しています。チャンネルIDを設定すると、配信中のライブをここへ自動表示できます。</p>
+              <a class="btn btn-gold" href="https://youtube.com/@miyashitanojikan" target="_blank" rel="noopener">YouTubeを開く ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="live-copy">
+          <span class="eyebrow"><span class="dot"></span> NOW STREAMING</span>
+          <h2>試合を、<br>そのまま。</h2>
+          <p>極楽FCの試合配信はこちら。自動LIVE埋め込み設定後は、配信を始めるとこのエリアにそのままライブ映像が表示されます。</p>
+          <a class="btn btn-ghost" href="https://youtube.com/@miyashitanojikan" target="_blank" rel="noopener">YouTube Channel ↗</a>
+          <div class="mini-note">
+            ※ ブラウザの仕様上、音声付きの自動再生は止められる場合があります。そのため自動再生時はミュートを基本にする設計です。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="join">
+      <div class="wrap">
+        <div class="join-box">
+          <div>
+            <span class="eyebrow">JOIN GOKURAKU</span>
+            <h2>一緒に、<br>極楽へ。</h2>
+            <p>VPGに興味がある、11人制Pro Clubsをやってみたい、まずは練習参加してみたい。そんな方は公式Xから気軽にご相談ください。</p>
+            <div class="join-list">
+              <span class="chip">VPGに興味あり</span>
+              <span class="chip">体験参加したい</span>
+              <span class="chip">チームを探している</span>
+              <span class="chip">サッカー議論をしたい</span>
+              <span class="chip">パブリックで参加したい</span>
+              <span class="chip">まず話だけ聞きたい</span>
+            </div>
+          </div>
+          <div class="join-actions">
+            <a class="btn btn-navy" href="https://x.com/GOKURAKUFC" target="_blank" rel="noopener">Xで加入相談する ↗</a>
+            <a class="btn btn-outline" href="https://youtube.com/@miyashitanojikan" target="_blank" rel="noopener">YouTubeを見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <img src="assets/gokuraku-fc-logo.png" alt="">
+        <div>GOKURAKU FC<br><small style="opacity:.55;font-weight:600">FOOTBALL CLUB · EST. 2026</small></div>
+      </div>
+      <div class="footer-links">
+        <a href="https://x.com/GOKURAKUFC" target="_blank" rel="noopener">X / @GOKURAKUFC</a>
+        <a href="https://youtube.com/@miyashitanojikan" target="_blank" rel="noopener">YouTube</a>
+        <span>© 2026 GOKURAKU FC</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /*
+      自動LIVE埋め込みを有効化するには、下の "" の中に
+      YouTubeチャンネルID（UCから始まる文字列）を入れてください。
+      例: const LIVE_CHANNEL_ID = "UCxxxxxxxxxxxxxxxxxxxxxx";
+    */
+
+    /*
+      MATCHES AUTO SYNC
+      data/matches.json はGitHub ActionsがVPG公式ページから自動更新します。
+      - 試合前 → 試合予定
+      - 試合日経過＋スコアあり → RESULT
+      - 試合日経過＋スコアなし → 結果反映待ち
+    */
+    const VPG_CALENDAR_URL = "https://virtualprogaming.com/league/Japan-Challenge-Cup/matches";
+
+    function matchStatus(match) {
+      const now = new Date();
+      const kickoff = new Date(match.date);
+      const hasScore = Number.isFinite(match.scoreHome) && Number.isFinite(match.scoreAway);
+
+      if (hasScore) return "finished";
+      if (!Number.isNaN(kickoff.getTime()) && kickoff.getTime() <= now.getTime()) return "pending";
+      return "upcoming";
+    }
+
+    function formatKickoff(iso) {
+      const d = new Date(iso);
+      if (Number.isNaN(d.getTime())) return "日時確認中";
+      return new Intl.DateTimeFormat("ja-JP", {
+        month:"numeric", day:"numeric", weekday:"short",
+        hour:"2-digit", minute:"2-digit",
+        timeZone:"Asia/Tokyo"
+      }).format(d);
+    }
+
+    function renderMatches(matches, meta = {}) {
+      const grid = document.getElementById("matchGrid");
+      if (!grid) return;
+
+      if (!Array.isArray(matches) || !matches.length) {
+        grid.innerHTML = `
+          <div class="match-empty">
+            <strong>VPGの試合情報を確認中です。</strong>
+            <p>公開後はVPG公式の大会ページを定期確認し、GOKURAKU FCの試合予定・結果を自動反映します。</p>
+            <a class="btn btn-navy" href="${VPG_CALENDAR_URL}" target="_blank" rel="noopener">VPG公式ページを開く ↗</a>
+          </div>`;
+        return;
+      }
+
+      const valid = matches.filter(m => m && m.home && m.away);
+      const sorted = [...valid].sort((a,b) => {
+        const ad = new Date(a.date).getTime();
+        const bd = new Date(b.date).getTime();
+        return (Number.isNaN(ad) ? Number.MAX_SAFE_INTEGER : ad) -
+               (Number.isNaN(bd) ? Number.MAX_SAFE_INTEGER : bd);
+      });
+
+      const now = new Date();
+      const past = sorted.filter(m => {
+        const t = new Date(m.date).getTime();
+        return !Number.isNaN(t) && t <= now.getTime();
+      });
+      const future = sorted.filter(m => {
+        const t = new Date(m.date).getTime();
+        return Number.isNaN(t) || t > now.getTime();
+      });
+
+      const selected = [];
+      if (past.length) selected.push({...past[past.length - 1], cardType:"RECENT RESULT"});
+      if (future.length) selected.push({...future[0], cardType:"NEXT MATCH"});
+      if (!selected.length && sorted.length) selected.push({...sorted[0], cardType:"MATCH"});
+
+      grid.innerHTML = selected.map(match => {
+        const status = matchStatus(match);
+        const hasScore = Number.isFinite(match.scoreHome) && Number.isFinite(match.scoreAway);
+
+        const center = hasScore
+          ? `<div class="match-score">${match.scoreHome} - ${match.scoreAway}</div>`
+          : `<div class="match-vs">VS</div>`;
+
+        const statusText =
+          status === "finished" ? "RESULT" :
+          status === "pending" ? "結果反映待ち" :
+          "試合予定";
+
+        return `
+          <article class="match-card">
+            <div class="match-label">
+              <span>${match.cardType || "MATCH"}</span>
+              <span class="status ${status}">${statusText}</span>
+            </div>
+            <span class="competition">${match.competition || meta.competition || "VPG"}</span>
+            <div class="match-teams">
+              <div class="match-team">${match.home}</div>
+              ${center}
+              <div class="match-team">${match.away}</div>
+            </div>
+            <div class="match-meta">
+              <span>${formatKickoff(match.date)}</span>
+              <a href="${match.source || VPG_CALENDAR_URL}" target="_blank" rel="noopener">VPGで確認 ↗</a>
+            </div>
+          </article>`;
+      }).join("");
+    }
+
+    async function loadMatches() {
+      try {
+        const res = await fetch(`data/matches.json?v=${Date.now()}`, {cache:"no-store"});
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        renderMatches(data.matches || [], data);
+      } catch (error) {
+        console.warn("Match data could not be loaded:", error);
+        renderMatches([], {});
+      }
+    }
+
+    loadMatches();
+
+
+    const LIVE_CHANNEL_ID = "UC7ACdsDRLNqpnnqXR6rQ0Ow";
+
+    if (LIVE_CHANNEL_ID) {
+      const shell = document.getElementById("playerShell");
+      shell.innerHTML = `
+        <iframe
+          src="https://www.youtube.com/embed/live_stream?channel=${encodeURIComponent(LIVE_CHANNEL_ID)}&autoplay=1&mute=1"
+          title="GOKURAKU FC YouTube Live"
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowfullscreen>
+        </iframe>`;
+    }
+  </script>
+</body>
+</html>
