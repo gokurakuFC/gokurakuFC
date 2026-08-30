@@ -1,8 +1,17 @@
 {
-  "updatedAt": "2026-08-30T00:20:58.738Z",
+  "updatedAt": "2026-08-30T03:20:40.170Z",
   "source": "https://virtualprogaming.com/league/Japan-Challenge-Cup/matches",
   "competition": "Japan Challenge Cup",
   "matches": [
+    {
+      "competition": "Japan Challenge Cup",
+      "date": null,
+      "home": "GOKURAKU FC",
+      "away": "MONOQLO PUDDING",
+      "scoreHome": null,
+      "scoreAway": null,
+      "source": "https://virtualprogaming.com/league/Japan-Challenge-Cup/matches"
+    },
     {
       "competition": "Japan Challenge Cup",
       "date": null,
