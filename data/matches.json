@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-12T18:26:53.881Z",
+  "updatedAt": "2026-09-12T21:25:11.440Z",
   "source": "https://virtualprogaming.com/league/Japan-Challenge-Cup/matches",
   "competition": "Japan Challenge Cup",
   "matches": [
@@ -17,6 +17,15 @@
       "date": null,
       "home": "ßeyönd Kyün",
       "away": "GOKURAKU FC",
+      "scoreHome": null,
+      "scoreAway": null,
+      "source": "https://virtualprogaming.com/league/Japan-Challenge-Cup/matches"
+    },
+    {
+      "competition": "Japan Challenge Cup",
+      "date": null,
+      "home": "GOKURAKU FC",
+      "away": "Nezumikko Club",
       "scoreHome": null,
       "scoreAway": null,
       "source": "https://virtualprogaming.com/league/Japan-Challenge-Cup/matches"
