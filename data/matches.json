@@ -1,8 +1,17 @@
 {
-  "updatedAt": "2026-09-12T12:29:44.523Z",
+  "updatedAt": "2026-09-12T15:24:42.016Z",
   "source": "https://virtualprogaming.com/league/Japan-Challenge-Cup/matches",
   "competition": "Japan Challenge Cup",
   "matches": [
+    {
+      "competition": "Japan Challenge Cup",
+      "date": null,
+      "home": "Va Ramosun FC",
+      "away": "GOKURAKU FC",
+      "scoreHome": null,
+      "scoreAway": null,
+      "source": "https://virtualprogaming.com/league/Japan-Challenge-Cup/matches"
+    },
     {
       "competition": "Japan Challenge Cup",
       "date": null,
